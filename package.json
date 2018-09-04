@@ -31,11 +31,14 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
+    "ag-grid": "^18.1.2",
+    "ag-grid-react": "^18.1.0",
     "babel-polyfill": "^6.26.0",
     "normalize.css": "^8.0.0",
     "prop-types": "^15.6.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-dom-factories": "^1.0.2",
     "react-hot-loader": "^4.3.3",
     "webpack": "^4.12.0"
   }

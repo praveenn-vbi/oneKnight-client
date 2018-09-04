@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import {DashboardStats} from "./Views/DashboardStats"
 
-import App from "./App.js";
-
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<DashboardStats />, document.getElementById("root"));

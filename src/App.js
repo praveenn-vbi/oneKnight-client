@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { hot } from "react-hot-loader";
-import Message from "./Components/Message/Message.js";
+import {NewDashboard} from "./Components/NewDashboard"
 import "normalize.css";
 import "./App.css";
-import armyKnife from "./swiss-army-knife.svg";
+
 
 class App extends Component {
   render() {
@@ -13,7 +13,7 @@ class App extends Component {
           <h1 className="main-header__title"> One Knight </h1>
         </header>
         <section className="container">
-          <Message message="Welcome to the react-starter. Start hacking away!" />
+        <NewDashboard></NewDashboard>
         </section>
       </div>
     );
