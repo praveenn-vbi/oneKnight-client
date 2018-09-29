@@ -4,16 +4,20 @@ import {getColumnData} from '../../Utils/aggrid/ColumnFactory'
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid/dist/styles/ag-grid.css';
 import 'ag-grid/dist/styles/ag-theme-balham.css';
+import './ViewStatsTable.css'
 
 class StatsTable extends Component  {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {loading:true};
     }
     componentDidMount() {
         getRecentStats(this.props.dashboardId).then((resultRows)=>{
-            this.setState({columnDefs:getColumnData(),rowData:resultRows})
+            this.setState({columnDefs:getColumnData(),rowData:resultRows,loading:false})
         });
+    }
+    onRowDataChanged = ({api}) => {
+            api.sizeColumnsToFit(); 
     }
     render() {
         return (
@@ -25,7 +29,10 @@ class StatsTable extends Component  {
 		            >
                     <AgGridReact
                         columnDefs={this.state.columnDefs}
-                        rowData={this.state.rowData}>
+                        rowData={this.state.rowData}
+                        enableSorting
+                        enableFilter
+                        onRowDataChanged={this.onRowDataChanged}>
                     </AgGridReact>
                 </div>
             );
